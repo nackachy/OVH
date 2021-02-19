@@ -5,8 +5,11 @@ import java.util.Properties
 
 class OVHProperties {
 
-
-  def getProp (propertyName: String) : String  = {
+  /** getting the resource
+   *
+   * @param propertyName    : based on the need, we can choose the appropriate property
+   */
+  def getProperty (propertyName: String) : String  = {
 
     val properties = new Properties()
     properties.load(new FileInputStream("config/ovhApplication.properties"))

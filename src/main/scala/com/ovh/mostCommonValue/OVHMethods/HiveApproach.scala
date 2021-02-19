@@ -21,7 +21,7 @@ class HiveApproach {
    */
 
   def excuteHqlFileToDF(hqlFile: String, hadoop: FileSystem)(implicit spark: SparkSession): DataFrame = {
-    val inputHqlQuery = new BufferedInputStream(hadoop.open(new Path(appProperties.getProp(INPUTHQLFILE)+hqlFile)))
+    val inputHqlQuery = new BufferedInputStream(hadoop.open(new Path(appProperties.getProperty(INPUTHQLFILE)+hqlFile)))
     val hqlQuery = Source.fromInputStream(inputHqlQuery).getLines().mkString
     spark.sql(hqlQuery).toDF()
   }

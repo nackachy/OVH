@@ -11,13 +11,15 @@ object MostCommonValueHiveApproach {
 
   def main(args: Array[String]): Unit = {
 
+    //create instance from classes
     val appProperties = new OVHProperties
     val IO = new IO
     val HiveApproach = new HiveApproach
-
+    
+    //spark configiration
     val spark = SparkSession.builder
-      .master(appProperties.getProp(MASTER))
-      .appName(appProperties.getProp(APPNAME))
+      .master(appProperties.getProperty(MASTER))
+      .appName(appProperties.getProperty(APPNAME))
       .getOrCreate()
 
     val hadoop: FileSystem = {
@@ -25,11 +27,15 @@ object MostCommonValueHiveApproach {
       FileSystem.get(conf)
     }
 
-    val inputData = IO.readData(appProperties.getProp(INPUTDATAPATH),appProperties.getProp(DATANAME))(spark)
-
+    //reading the data
+    val inputData = IO.readData(appProperties.getProperty(INPUTDATAPATH),appProperties.getProperty(DATANAME))(spark)
+    
+    //creating a view to use in the hql file
     inputData.createTempView("inputData")
 
+    //excuting the hql file
     val finalData = HiveApproach.excuteHqlFileToDF("mostCommonValue.hql",hadoop)(spark)
+    
     finalData.show()
   }
 
