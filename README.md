@@ -1,16 +1,16 @@
-# DataClusteringHDFS
+# OVH
 
 ## Description
 
-The purpose of this project is to to create a deterministic code to generate a new DataFrame with exactly one row for each distinct "key" and the most common "value" for the corresponding key.
-</n> I developped thisnproject as if it's a big one wich is going to be developped more and more in the future. That's why I implimented an architecture that helps me using 
+The purpose of this project is to to create a deterministic code to generate a new DataFrame with exactly one row for each distinct ***key*** and the most common ***value*** for the corresponding key.
+</n> I developped this project as if it's a big one wich is going to be developped more and more in the future. That's why I implimented an architecture that helps me using 
 classes, methods and vars to attend my goal.
 
 ## Requirements
 
 * [Java 8](https://www.java.com/fr/download/faq/java8.xml)
 * [Scala 2.11.12](https://www.scala-lang.org/download/2.11.12.html)
-* [SBT 1.4.7](https://piccolo.link/sbt-1.2.8.zip)
+* [SBT 1.4.7](https://piccolo.link/sbt-1.4.7.zip)
 * [Spark 2.4.4](https://spark.apache.org/releases/spark-release-2-4-4.html)
 
 ## Steps
@@ -43,11 +43,11 @@ To build the project, run :
     
 This will produce a jar containing the compiled project.
 
-Then you can submit the job using **spark-submit** : line commands are explained in scripts/shell/spark-submit.sh
+Then you can submit the job using **spark-submit** : line commands are explained in ***scripts/shell/spark-submit.sh***
 
 ## Results
 
-The result is a final data that contains each key and each most common value.
+The result is a final data that contains each key with its most common value.
 
 ***Input data***
 
