@@ -51,13 +51,11 @@ The result is a final data that contains each key and each most common value.
 
 ***Input data***
 
-![input data](https://github.com/nackachy/OVH/blob/master/finalData.PNG)
+![input data](https://github.com/nackachy/OVH/blob/master/inputData.PNG)
 
-***Output datat***
+***Final datat***
 
-This image is provided by the R code "DataViz.R" in the project.
-
-![Data Plot](https://github.com/nackachy/DataClusteringHDFS/blob/master/Map.png)
+![final data](https://github.com/nackachy/OVH/blob/master/finalData.PNG)
 
 
 
