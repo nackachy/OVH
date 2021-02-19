@@ -51,7 +51,7 @@ The result is a final data that contains each key and each most common value.
 
 ***Input data***
 
-![Data Clustered](https://github.com/nackachy/DataClusteringHDFS/blob/master/dataWithClusters.PNG)
+![input data](https://github.com/nackachy/OVH/blob/master/finalData.PNG)
 
 ***Output datat***
 
