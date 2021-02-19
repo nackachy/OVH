@@ -20,12 +20,12 @@ class WindowApproach {
      * @param columnKey    : column name of the key to use for the partition
      * @param columnValue  : column value of the key to use for the partition
      */
-    def windowSpec = Window.partitionBy(columnKey, columnValue)
+    def windowSpec = Window.partitionBy(columnKey, columnValue) //defining a window for the aggregation
 
-    inputData.withColumn("count", count(columnValue).over(windowSpec))
-      .orderBy(desc("count"),asc(columnValue))
-      .groupBy(columnKey)
-      .agg(first(columnValue).as(columnValue))
-      .orderBy(asc(columnKey))
+    inputData.withColumn("countedValue", count(columnValue).over(windowSpec)) // counting repertition of value for each group of key, value and assigning that value to new column called as countedValue
+      .orderBy(desc("countedValue"),asc(columnValue)) // order dataframe with countedValue in descending order
+      .groupBy(columnKey) // group by columnKey
+      .agg(first(columnValue).as(columnValue)) //taking the first row of each key with count column as the highest
+      .orderBy(asc(columnKey)) // order dataframe with columnKey in ascending order
   }
 }
