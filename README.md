@@ -53,7 +53,7 @@ The result is a final data that contains each key with its most common value.
 
 ![input data](https://github.com/nackachy/OVH/blob/master/inputData.PNG)
 
-***Final datat***
+***Final data***
 
 ![final data](https://github.com/nackachy/OVH/blob/master/finalData.PNG)
 
